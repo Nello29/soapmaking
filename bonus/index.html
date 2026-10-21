@@ -538,8 +538,8 @@
         <h1 class="bonus-label"><span class="gift" aria-hidden="true">🎁</span> <span class="glint">Your free bonus</span></h1>
         <p class="bonus-sub">Both free bonuses from the book, including the one you just scanned for:</p>
         <ul class="titles">
-          <li>Soap Companion App</li>
-          <li>Soap Gift Guide</li>
+          <li>Soap Batch Tracker App</li>
+          <li>Turn Soap into Gifts</li>
         </ul>
       </div>
       <a class="cta-btn" href="access/">
@@ -561,11 +561,11 @@
         <ol class="included">
           <li class="included-item">
             <span class="included-icon" aria-hidden="true">1</span>
-            <span class="included-text"><strong>Soap Companion App</strong> – write down every batch so you can make it again, weigh your bars to see when they're ready, know what each bar really costs, and fit any recipe from the book to your own mold</span>
+            <span class="included-text"><strong>Soap Batch Tracker App</strong> – write down every batch so you can make it again, weigh your bars to see when they're ready, know what each bar really costs, and fit any recipe from the book to your own mold</span>
           </li>
           <li class="included-item">
             <span class="included-icon" aria-hidden="true">2</span>
-            <span class="included-text"><strong>Soap Gift Guide</strong> – turn your batches into gifts: wrapping for each method, what to write (and not write) on the label, and when to start so your bars are ready in time</span>
+            <span class="included-text"><strong>Turn Soap into Gifts</strong> – turn your batches into gifts: wrapping for each method, what to write (and not write) on the label, and when to start so your bars are ready in time</span>
           </li>
         </ol>
       </div>
@@ -627,7 +627,7 @@
     // Il QR scansionato arriva con ?for=<chiave>: il suo bonus si mette in evidenza e la chiave passa all'accesso,
     // che la usa per l'ad tracking e per la pagina di arrivo. Una chiave sconosciuta non cambia niente.
     (function () {
-      var bonus = {"app": "Soap Companion App", "gift": "Soap Gift Guide"};
+      var bonus = {"app": "Soap Batch Tracker App", "gift": "Turn Soap into Gifts"};
       var chiave = new URLSearchParams(window.location.search).get("for");
       if (!chiave || !Object.prototype.hasOwnProperty.call(bonus, chiave)) return;
       document.querySelectorAll(".titles li").forEach(function (li) {
