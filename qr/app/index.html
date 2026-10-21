@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>The Soap Making Bible for Beginners</title>
+  <script>
+    // Un QR del libro. Chi ha già sbloccato i bonus in questo browser (il segno lo lascia /bonus/ready/) va dritto a ciò
+    // che ha scansionato; tutti gli altri passano dal ponte, con la chiave del QR. Senza localStorage si passa dal ponte.
+    (function () {
+      var sbloccato = false;
+      try { sbloccato = !!window.localStorage.getItem("bonus-sbloccati"); } catch (e) {}
+      window.location.replace(sbloccato ? "/bonus/ready/?for=app" : "/bonus/?for=app");
+    })();
+  </script>
+</head>
+<body>
+  <noscript><p><a href="/bonus/?for=app">Continue to your bonus</a></p></noscript>
+</body>
+</html>
