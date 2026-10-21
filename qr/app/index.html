@@ -11,7 +11,7 @@
     (function () {
       var sbloccato = false;
       try { sbloccato = !!window.localStorage.getItem("bonus-sbloccati"); } catch (e) {}
-      window.location.replace(sbloccato ? "/bonus/ready/?for=app" : "/bonus/?for=app");
+      window.location.replace(sbloccato ? "https://tlb-soap-companion.netlify.app/" : "/bonus/?for=app");
     })();
   </script>
 </head>
