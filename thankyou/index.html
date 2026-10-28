@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You! Your Free Book is Coming | The Soap Making Bible for Beginners</title>
+  <meta name="description" content="Thank you for downloading The Soap Making Bible for Beginners! Check your email for your free copy and discover how to unlock your exclusive Soap Making Bonus Bundle.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest:        #123F45;
+      --forest-mid:    #095C68;
+      --teal:          #00798C;
+      --sage:          #5D7A5F;
+      --sage-soft:     #EDF0ED;
+      --terracotta:    #C23A4D;
+      --gold:          #E3A93F;
+      --gold-pale:     #FAF0DC;
+      --gold-bright:   #E7B65C;
+      --cream:         #F7F3ED;
+      --cream-dark:    #F5EBDA;
+      --warm-white:    #FBF9F6;
+      --text:          #1E1E1E;
+      --text-secondary:#5A5A5A;
+      --text-muted:    #8A8A8A;
+      --white:         #FFFFFF;
+      --shadow-sm:     0 2px 8px rgba(18,63,69,0.06);
+      --shadow-md:     0 8px 30px rgba(18,63,69,0.10);
+      --shadow-lg:     0 20px 50px rgba(18,63,69,0.14);
+      --shadow-book:   0 25px 60px rgba(0,0,0,0.30), 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ======================== HERO ======================== */
+    .hero {
+      background: var(--forest);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold), var(--sage));
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -40%; right: -15%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,121,140,0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-book {
+      flex-shrink: 0;
+      width: 195px;
+    }
+
+    .book-wrap { position: relative; }
+
+    .book-cover {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: var(--shadow-book);
+      transform: perspective(900px) rotateY(-5deg);
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .book-cover:hover {
+      transform: perspective(900px) rotateY(0deg) scale(1.03);
+    }
+
+    /* il mockup 3D ha già dorso e prospettiva: niente rotazione né striscia del dorso, e l'ombra segue la sagoma */
+    .hero-book:has(.book-mockup) { width: 220px; }
+    .book-wrap:has(.book-mockup)::before { display: none; }
+    .book-mockup, .book-mockup:hover {
+      border-radius: 0;
+      box-shadow: none;
+      transform: none;
+      filter: drop-shadow(0 14px 18px rgba(0,0,0,0.35));
+    }
+
+    .book-wrap::before {
+      content: "";
+      position: absolute;
+      left: -3px; top: 2%;
+      width: 6px; height: 96%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(0,0,0,0.15));
+      border-radius: 2px 0 0 2px;
+      transform: perspective(900px) rotateY(-5deg);
+    }
+
+    .hero-text {
+      flex: 1;
+      color: var(--white);
+    }
+
+    /* ======================== MAIN CONTENT ======================== */
+    .main-content {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    .email-heading {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .email-heading h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 0.4rem;
+    }
+
+    .email-heading p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+
+    /* ======================== TRUST BAR ======================== */
+    .trust {
+      background: var(--forest);
+      padding: 1.6rem 1.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .trust::before,
+    .trust::after {
+      content: "";
+      position: absolute;
+      top: 0; width: 80px; height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .trust::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--forest), transparent);
+    }
+
+    .trust::after {
+      right: 0;
+      background: linear-gradient(-90deg, var(--forest), transparent);
+    }
+
+    .trust-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+
+    .trust-icon {
+      width: 32px; height: 32px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+
+    .trust-item strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    /* ======================== BONUS ======================== */
+    .bonus {
+      background: linear-gradient(175deg, var(--cream-dark) 0%, var(--cream) 100%);
+      padding: 3.5rem 1.5rem 3rem;
+    }
+
+    .bonus-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .bonus-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .bonus-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.5rem;
+    }
+
+    .bonus h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .bonus-sub {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Two-column card */
+    .bonus-card {
+      background: var(--white);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 360px 1fr;
+    }
+
+   .bonus-visual {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.bonus-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+    .bonus-content {
+      padding: 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .bonus-content h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 0.6rem;
+      line-height: 1.25;
+    }
+
+    .bonus-content > p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+
+    /* What's included items */
+    .included {
+      margin-bottom: 1.2rem;
+    }
+
+    .included-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.4rem 0;
+    }
+
+    .included-icon {
+      width: 36px; height: 36px;
+      flex-shrink: 0;
+      background: var(--sage-soft);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--sage);
+    }
+
+    .included-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* Email CTA button */
+    .email-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: var(--forest);
+      color: var(--white);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.9rem 1.6rem;
+      border-radius: 0.6rem;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(18,63,69,0.25);
+      letter-spacing: 0.01em;
+    }
+
+    .cta-icon {
+      display: flex;
+      align-items: center;
+      opacity: 0.8;
+    }
+
+    .cta-arrow {
+      opacity: 0.6;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    /* ======================== FOOTER ======================== */
+    footer {
+      background: var(--forest);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 1.4rem 1.5rem;
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+
+    .footer-contact {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.88rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-contact strong { color: var(--white); }
+
+    footer a {
+      color: var(--gold-bright);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* ======================== ANIMATIONS ======================== */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-inner   { animation: slideUp 0.55s ease-out; }
+    .main-content { animation: slideUp 0.55s 0.1s ease-out both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+
+    /* ======================== RESPONSIVE ======================== */
+    @media (max-width: 700px) {
+      .hero-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem 1.5rem 2rem;
+        gap: 1.5rem;
+      }
+
+      .hero-book { width: 150px; }
+      .hero-book:has(.book-mockup) { width: 170px; }
+      .book-cover, .book-wrap::before { transform: none; }
+
+      .main-content {
+        padding: 2.5rem 1.25rem 1.5rem;
+      }
+
+      .email-heading h2 { font-size: 1.4rem; }
+
+      .trust-inner {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+      }
+
+      .trust::before, .trust::after { display: none; }
+
+      /* Bonus card stacks on mobile */
+      .bonus-card {
+        grid-template-columns: 1fr;
+      }
+
+      .bonus-content {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .bonus-content h3 {
+        font-size: 1.15rem;
+      }
+
+      .bonus h2 { font-size: 1.45rem; }
+    }
+
+    @media (min-width: 900px) {
+      .hero-inner { padding: 4rem 2rem 3.5rem; }
+      .hero-book  { width: 220px; }
+      .email-heading h2 { font-size: 1.85rem; }
+      .bonus h2   { font-size: 2rem; }
+      .bonus-card { grid-template-columns: 360px 1fr; }
+    }
+
+    /* Desktop: la colonna dell'immagine è alta quanto il testo accanto; il quadrato resta intero, centrato sul colore scuro */
+    @media (min-width: 701px) {
+      .bonus-visual { aspect-ratio: auto; display: flex; align-items: center; background: var(--forest); }
+      .bonus-visual img { height: auto; aspect-ratio: 1 / 1; }
+    }
+
+    /* ======================== PASSI COMPATTI ======================== */
+    .qsteps {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.75rem;
+      position: relative;
+    }
+
+    .qstep {
+      display: flex;
+      gap: 1rem;
+      position: relative;
+      padding-bottom: 1.6rem;
+    }
+
+    .qstep:last-child { padding-bottom: 0; }
+
+    /* il filo che unisce i passi */
+    .qstep:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      left: 17px; top: 38px; bottom: 4px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--teal), var(--sage));
+      opacity: 0.25;
+    }
+
+    .qstep-dot {
+      width: 36px; height: 36px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--forest);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .qstep-body { flex: 1; min-width: 0; padding-top: 0.35rem; }
+
+    .qstep-title {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .qstep-title strong { color: var(--forest); }
+
+    .qstep-sub {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 0.2rem;
+    }
+
+    .qstep-safe {
+      display: flex;
+      gap: 0.45rem;
+      align-items: flex-start;
+    }
+
+    .qstep-safe svg {
+      width: 15px; height: 15px;
+      flex-shrink: 0;
+      margin-top: 0.22rem;
+      stroke: var(--forest);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* l'email d'esempio dentro un telefono disegnato (proposta A, scelta l'08-10-26) */
+    .phone-ex {
+      position: relative;
+      width: fit-content;
+      margin: 0.8rem auto 0;
+    }
+
+    .phone-ex-frame {
+      width: 270px;
+      background: #F6F8FC;
+      border: 10px solid #1D2226;
+      border-bottom: none;
+      border-radius: 34px 34px 0 0;
+      padding: 26px 10px 0;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+      -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent);
+      mask-image: linear-gradient(180deg, #000 72%, transparent);
+    }
+
+    .phone-ex-notch {
+      position: absolute;
+      top: 6px; left: 50%;
+      transform: translateX(-50%);
+      width: 70px; height: 16px;
+      background: #1D2226;
+      border-radius: 10px;
+    }
+
+    .phone-ex-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #3C4043;
+      padding: 0 4px 8px;
+    }
+
+    .phone-ex-bar b { font-size: 1rem; }
+
+    .phone-ex-search {
+      background: #E9EEF6;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      color: #5F6368;
+      padding: 0.4rem 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .phone-ex-row {
+      display: flex;
+      gap: 0.55rem;
+      align-items: center;
+      padding: 0.55rem 0.35rem;
+      border-radius: 10px;
+    }
+
+    .phone-ex-dim .av { width: 28px; height: 28px; border-radius: 50%; background: #D7DCE3; flex-shrink: 0; }
+    .phone-ex-dim .ln { flex: 1; }
+    .phone-ex-dim .ln i { display: block; height: 7px; border-radius: 4px; background: #DDE2E8; margin: 4px 0; }
+    .phone-ex-dim .ln i:first-child { width: 45%; background: #CFD5DD; }
+    .phone-ex-dim .ln i:last-child { width: 85%; }
+
+    .phone-ex-hit {
+      background: var(--white);
+      box-shadow: 0 0 0 2px var(--gold), 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .phone-ex-hit .inbox-avatar { width: 28px; height: 28px; font-size: 0.8rem; }
+    .phone-ex-hit .inbox-top,
+    .phone-ex-hit .inbox-subject { font-size: 0.78rem; }
+    .phone-ex-hit .inbox-snippet { font-size: 0.72rem; }
+    .phone-ex-hit .inbox-time { font-size: 0.65rem; }
+
+    /* a sinistra del telefono, la freccia scende sull'email evidenziata */
+    .phone-ex-note {
+      position: absolute;
+      right: calc(100% - 22px); top: 138px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      line-height: 1;
+      color: var(--terracotta);
+      transform: rotate(-6deg);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      white-space: nowrap;
+    }
+
+    .phone-ex-note svg {
+      width: 40px; height: 30px;
+      margin-right: -4px;
+      stroke: var(--terracotta);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    @media (max-width: 420px) {
+      .phone-ex { margin-right: 0; }  /* il telefono a destra: a sinistra resta lo spazio per la scritta */
+      .phone-ex-frame { width: 225px; }
+      .phone-ex-note { font-size: 1.35rem; }
+    }
+
+    .inbox-avatar {
+      width: 36px; height: 36px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--forest);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .inbox-body { min-width: 0; flex: 1; }
+
+    .inbox-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-size: 0.92rem;
+    }
+
+    .inbox-from { font-weight: 700; color: var(--text); }
+    .inbox-time { font-size: 0.78rem; color: var(--text-secondary); font-weight: 600; }
+
+    .inbox-subject,
+    .inbox-snippet {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .inbox-subject { font-size: 0.92rem; font-weight: 600; color: var(--text); }
+    .inbox-snippet { font-size: 0.85rem; color: var(--text-secondary); }
+
+    /* «Can't find it?» */
+    .qtips {
+      background: var(--warm-white);
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-sm);
+      padding: 1.1rem 1.2rem 0.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .qtips-q {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 0.4rem;
+    }
+
+    .qtips ul {
+      list-style: none;
+      padding: 0 0 0.8rem;
+      margin: 0;
+    }
+
+    .qtips li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      padding: 0.25rem 0 0.25rem 1.3rem;
+      position: relative;
+    }
+
+    .qtips li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0.6rem;
+      width: 6px; height: 6px;
+      background: var(--sage);
+      border-radius: 50%;
+    }
+
+    .qtips li strong { color: var(--text); }
+
+    /* ======================== PAGINE DEL LIBRO (flipbook) ======================== */
+    /* ======================== APERTURA COMPATTA ======================== */
+    /* un solo titolo forte che dice cosa fare, come la bridge page del QR (scelta dell'utente, 08-10-26).
+       Con il libro da sfogliare la copertina fissa sparisce (la mostra il flipbook) e il testo va al centro */
+    body:has(.peek) .hero-book,
+    body:has(.peek) .hero::after { display: none; }
+    body:has(.peek) .hero-inner { justify-content: center; text-align: center; padding-top: 2.5rem; padding-bottom: 2.5rem; }
+
+    .h-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    .h-pill svg { width: 15px; height: 15px; stroke: var(--gold-bright); fill: none; stroke-width: 3; }
+
+    .hero .h-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 800;
+      font-size: 3rem;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin: 0 0 0.7rem;
+      background: linear-gradient(180deg, var(--gold-pale) 0%, var(--gold-bright) 45%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .h-sub {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.05rem;
+      line-height: 1.5;
+      max-width: 440px;
+    }
+
+    body:has(.peek) .h-sub { margin: 0 auto; }
+
+    .h-sub strong { color: var(--white); }
+
+    @media (max-width: 700px) {
+      .hero .h-title { font-size: 2.35rem; }
+      .h-sub { margin: 0 auto; }
+    }
+
+    .peek {
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.07) 0%, transparent 60%),
+        linear-gradient(180deg, var(--forest) 0%, var(--forest-mid) 100%);
+      padding: 3.75rem 1rem 3.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .peek-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .peek-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 0.5rem;
+    }
+
+    .peek h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .peek-sub {
+      color: rgba(255,255,255,0.78);
+      max-width: 560px;
+      margin: 0 auto 2.25rem;
+    }
+
+    .flip-stage {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ombra morbida del libro sul "tavolo" */
+    .flip-stage::after {
+      content: "";
+      position: absolute;
+      left: 8%; right: 8%; bottom: -18px;
+      height: 36px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, transparent 70%);
+      filter: blur(6px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .flip-book { position: relative; z-index: 1; margin: 0 auto; }
+
+    .flip-page {
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .flip-page img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+
+    /* senza JavaScript (o prima che parta) le pagine restano in fila da scorrere */
+    .flip-book:not(.flip-ready) {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+    }
+    .flip-book:not(.flip-ready) .flip-page {
+      flex: 0 0 min(70vw, 260px);
+      scroll-snap-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .flip-end {
+      background: linear-gradient(160deg, var(--cream) 0%, var(--cream-dark) 100%);
+      display: flex;
+    }
+
+    .flip-end-inner {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 12% 10%;
+      border: 2px solid var(--gold);
+      margin: 6%;
+      height: 88%;
+    }
+
+    .flip-end-kicker {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.75rem;
+    }
+
+    .flip-end h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+      line-height: 1.25;
+      color: var(--forest);
+      margin-bottom: 0.9rem;
+    }
+
+    .flip-end p { color: var(--text-secondary); font-size: 0.95rem; }
+    .flip-end strong { color: var(--forest); }
+
+    .flip-end-icon {
+      font-size: 2.2rem;
+      margin-top: 1.25rem;
+    }
+
+    /* il gesto animato sul libro: compare dopo che la copertina si è aperta, sparisce al primo gesto del lettore */
+    .swipe-hint {
+      position: absolute;
+      z-index: 5;
+      width: 0; height: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .swipe-hint.swipe-on { opacity: 1; }
+
+    /* il dito: la punta dell'indice (circa 11.5, 7 nel disegno da 24) cade sull'origine del suggerimento */
+    .swipe-hand {
+      position: absolute;
+      left: -40px; top: -24px;
+      width: 84px; height: 84px;
+      fill: var(--white);
+      stroke: var(--forest);
+      stroke-width: 0.7;
+      paint-order: stroke;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45));
+      transform-origin: 46% 30%;
+      animation: swipe-gesto 2s ease-in-out infinite;
+    }
+
+    .swipe-trail {
+      position: absolute;
+      left: 0; top: -4px;
+      height: 8px; width: 0;
+      border-radius: 8px;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--gold-bright) 90%, transparent), transparent);
+      animation: swipe-scia 2s ease-in-out infinite;
+    }
+
+    .swipe-label {
+      position: absolute;
+      top: 70px; left: 0;
+      transform: translateX(-50%);
+      background: rgba(11,20,22,0.78);
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    @keyframes swipe-gesto {
+      0%   { transform: translateX(70px) rotate(8deg);  opacity: 0; }
+      15%  { transform: translateX(70px) rotate(8deg);  opacity: 1; }
+      65%  { transform: translateX(-70px) rotate(-6deg); opacity: 1; }
+      85%, 100% { transform: translateX(-70px) rotate(-6deg); opacity: 0; }
+    }
+
+    @keyframes swipe-scia {
+      0%, 15% { left: 70px; width: 0; opacity: 0; }
+      65%     { left: -70px; width: 140px; opacity: 1; }
+      85%, 100% { left: -70px; width: 0; opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .swipe-hand, .swipe-trail { animation: none; }
+    }
+
+    .flip-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .flip-btn {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s, opacity 0.2s;
+    }
+
+    .flip-btn:hover { background: rgba(255,255,255,0.18); transform: scale(1.06); }
+    .flip-btn:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
+    .flip-btn[disabled] { opacity: 0.3; cursor: default; transform: none; }
+
+    .flip-progress {
+      width: 160px;
+      text-align: center;
+    }
+
+    .flip-count {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.85);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .flip-bar {
+      height: 3px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 3px;
+      margin-top: 0.45rem;
+      overflow: hidden;
+    }
+
+    .flip-bar span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+      transition: width 0.5s ease;
+    }
+
+    .flip-hint {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 1rem;
+      transition: opacity 0.4s;
+    }
+
+    .flip-hint.flip-gone { opacity: 0; }
+
+    .peek-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: var(--white);
+      font-size: 0.95rem;
+    }
+
+    .peek-cta strong { color: var(--gold-bright); }
+
+    @media (max-width: 700px) {
+      .peek { padding: 2.75rem 1rem 2.5rem; }
+      .peek h2 { font-size: 1.5rem; }
+      .peek-sub { margin-bottom: 1.75rem; }
+      .peek-cta { border-radius: 14px; }
+    }
+
+    /* ======================== NOTA DELL'AUTORE ======================== */
+    .author-note {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0.5rem 1.5rem 3.5rem;
+    }
+
+    .author-card {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      padding: 2rem 1.75rem 1.75rem;
+      position: relative;
+    }
+
+    .author-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .author-photo {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--gold);
+    }
+
+    .author-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    .author-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      color: var(--forest);
+      line-height: 1.25;
+    }
+
+    .author-card p {
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .author-card p strong { color: var(--forest); }
+
+    .author-sign {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--forest);
+      margin-top: 0.25rem;
+    }
+
+    @media (max-width: 700px) {
+      .author-card { padding: 1.6rem 1.25rem 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============== HERO ============== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-book">
+        <div class="book-wrap">
+          <img src="mockup.soapmaking.webp" alt="The Soap Making Bible for Beginners – Book Cover" class="book-cover book-mockup" />
+        </div>
+      </div>
+      <div class="hero-text">
+        <div class="h-pill"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Confirmed — you're all set</div>
+        <h1 class="h-title">Check Your Inbox</h1>
+        <p class="h-sub">Your free copy of <strong>The Soap Making Bible for Beginners</strong> is waiting in an email from <strong>Julie Hadley</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== MAIN CONTENT ============== -->
+  <div class="main-content">
+    <div class="email-heading">
+      <h2>Grab Your Copy in 3 Simple Steps</h2>
+      <p>Your download link is waiting in your inbox right now.</p>
+    </div>
+
+    <ol class="qsteps">
+      <li class="qstep">
+        <span class="qstep-dot" aria-hidden="true">1</span>
+        <div class="qstep-body">
+          <p class="qstep-title">Open your email app</p>
+          <p class="qstep-sub">Gmail, Yahoo, Outlook…</p>
+        </div>
+      </li>
+      <li class="qstep">
+        <span class="qstep-dot" aria-hidden="true">2</span>
+        <div class="qstep-body">
+          <p class="qstep-title">Find this email from <strong>Julie Hadley</strong></p>
+          <!-- l'email dentro un telefono disegnato: si capisce a colpo d'occhio che è un esempio, non un pezzo della pagina -->
+          <div class="phone-ex" role="img" aria-label="Example: the email from Julie Hadley in your inbox">
+            <div class="phone-ex-frame" aria-hidden="true">
+              <div class="phone-ex-notch"></div>
+              <div class="phone-ex-bar"><span>9:41</span><b>Inbox</b><span>●●●</span></div>
+              <div class="phone-ex-search">Search in mail</div>
+              <div class="phone-ex-row phone-ex-dim"><span class="av"></span><span class="ln"><i></i><i></i></span></div>
+              <div class="phone-ex-row phone-ex-hit">
+                <div class="inbox-avatar">J</div>
+                <div class="inbox-body">
+                  <div class="inbox-top"><span class="inbox-from">Julie Hadley</span><span class="inbox-time">now</span></div>
+                  <div class="inbox-subject">📖 Here's your &quot;The Soap Making Bible for Beginners&quot;</div>
+                  <div class="inbox-snippet">Thank you for your interest in The Soap Making Bible for Beginners! Your guide is ready to download.</div>
+                </div>
+              </div>
+              <div class="phone-ex-row phone-ex-dim"><span class="av"></span><span class="ln"><i></i><i></i></span></div>
+              <div class="phone-ex-row phone-ex-dim"><span class="av"></span><span class="ln"><i></i><i></i></span></div>
+            </div>
+            <span class="phone-ex-note" aria-hidden="true">this one!<svg viewBox="0 0 40 30"><path d="M4 3 C 16 2, 30 8, 35 24"/><path d="M35 24 l -7 -4 M35 24 l 1 -8"/></svg></span>
+          </div>
+        </div>
+      </li>
+      <li class="qstep">
+        <span class="qstep-dot" aria-hidden="true">3</span>
+        <div class="qstep-body">
+          <p class="qstep-title">Tap the <strong>download button</strong> — and enjoy!</p>
+          <p class="qstep-sub qstep-safe"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Opens as a PDF on Google Drive. No account, no credit card, nothing to pay.</span></p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="qtips">
+      <p class="qtips-q">Can't find it?</p>
+      <ul>
+        <li>Check your <strong>Spam</strong> or <strong>Promotions</strong> folder</li>
+        <li>Search for "<strong>Julie Hadley</strong>" in your inbox</li>
+        <li>Take a look in <strong>Junk Mail</strong></li>
+        <li>Add our address to your contacts for future messages</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============== TRUST BAR ============== -->
+  <section class="trust">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <span class="trust-icon">📚</span>
+        <span><strong>3</strong> books in 1</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🧼</span>
+        <span><strong>40</strong> recipes for every level</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">📸</span>
+        <span><strong>Full-color</strong> photos throughout</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== BONUS ============== -->
+  <section class="bonus">
+    <div class="bonus-inner">
+      <div class="bonus-header">
+        <p class="bonus-label">🎁 Exclusive Bonus</p>
+        <h2>There's More Waiting for You</h2>
+        <p class="bonus-sub">An app and a guide to keep track of every batch and turn your bars into gifts.</p>
+      </div>
+
+      <div class="bonus-card">
+        <div class="bonus-visual">
+          <img src="bonus.soapmaking.jpg" alt="Soap Making Bonus Bundle" />
+        </div>
+        <div class="bonus-content">
+          <h3>Your Soap Making Bonus Bundle</h3>
+          <p>Everything you need alongside your book: an app that remembers every batch, shows when your bars are ready and what each one really cost, and fits any recipe to your own mold, plus a guide to wrapping, labeling and timing your soap as gifts.</p>
+
+          <div class="included">
+            <div class="included-item">
+              <div class="included-icon">✓</div>
+              <div class="included-text">Soap Batch Tracker App</div>
+            </div>
+            <div class="included-item">
+              <div class="included-icon">✓</div>
+              <div class="included-text">Turn Soap into Gifts</div>
+            </div>
+          </div>
+
+          <div class="email-cta-btn">
+            <span class="cta-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+            </span>
+            Check Your Email for Details
+            <span class="cta-arrow">→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== NOTA DELL'AUTORE ============== -->
+  <section class="author-note">
+    <div class="author-card">
+      <div class="author-head">
+        <img class="author-photo" src="autore.soapmaking.jpg" alt="Julie Hadley" width="144" height="144" loading="lazy" />
+        <div>
+          <p class="author-label">A note from the author</p>
+          <h3>Hi, I'm Julie</h3>
+        </div>
+      </div>
+      <p>I started making soap twenty years ago, when store-bought bars kept drying out my son's skin. I wrote this book so your first batch is one you'll want to make again, and every batch after it a little better. I'm so glad you're here.</p>
+      <p><strong>Why is it free?</strong> I'll be honest: a new book lives or dies by its first reviews on Amazon. Giving the digital copy to people who'll actually use it is the best way I know to get honest ones. The paperback goes on sale at $23.97; your copy is free.</p>
+      <p>If it helps you, a quick review is all I ask. No obligation, no catch.</p>
+      <p class="author-sign">Julie Hadley</p>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer>
+    <p class="footer-contact">
+      <strong>Questions?</strong> Simply reply to any of our emails — we're happy to help.
+    </p>
+    <p>
+      © 2026 Julie Hadley · All rights reserved ·
+      <a href="https://s3.privyr.com/privacy/privacy-policy.html?d=eyJlbWFpbCI6InZpcHJlYWRlcnNAdGxiLXB1Ymxpc2hpbmcuY29tIiwiY29tcGFueSI6IlRMQiBQdWJsaXNoaW5nIiwiZ2VuX2F0IjoiMjAyNi0wOS0yOVQxNToxNzoxMC4wOThaIn0=" target="_blank" rel="noopener">Privacy Policy</a>
+    </p>
+  </footer>
+
+</body>
+</html>
